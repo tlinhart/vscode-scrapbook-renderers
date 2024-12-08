@@ -4,6 +4,7 @@
     "config:js-app",
     "schedule:weekly",
     ":maintainLockFilesWeekly",
+    "customManagers:biomeVersions",
     "group:allNonMajor",
     ":automergeMinor"
   ]
