@@ -1,0 +1,40 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "watch",
+      "dependsOn": ["watch:typecheck", "watch:build"],
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "presentation": {
+        "reveal": "never"
+      }
+    },
+    {
+      "label": "watch:typecheck",
+      "type": "npm",
+      "script": "watch:typecheck",
+      "group": "build",
+      "problemMatcher": "$tsc-watch",
+      "isBackground": true,
+      "presentation": {
+        "group": "watch",
+        "reveal": "never"
+      }
+    },
+    {
+      "label": "watch:build",
+      "type": "npm",
+      "script": "watch:build",
+      "group": "build",
+      "problemMatcher": "$esbuild-watch",
+      "isBackground": true,
+      "presentation": {
+        "group": "watch",
+        "reveal": "never"
+      }
+    }
+  ]
+}
