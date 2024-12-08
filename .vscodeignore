@@ -1,0 +1,9 @@
+node_modules/
+src/
+.github/
+.vscode/
+.gitignore
+esbuild.mjs
+biome.json
+tsconfig.json
+renovate.json
