@@ -1,0 +1,11 @@
+{
+  "compilerOptions": {
+    "module": "node16",
+    "moduleResolution": "node16",
+    "rootDir": "src",
+    "jsx": "react",
+    "noEmit": true,
+    "strict": true
+  },
+  "include": ["src/**/*"]
+}
