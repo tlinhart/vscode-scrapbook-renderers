@@ -48,7 +48,6 @@
     "biome:fix": "biome check --write",
     "biome": "biome ci",
     "build": "node esbuild.mjs --production",
-    "vscode:prepublish": "npm run typecheck && npm run biome:fix && npm run build",
     "publish": "vsce publish"
   },
   "devDependencies": {
