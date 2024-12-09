@@ -1,0 +1,69 @@
+{
+  "name": "scrapbook-renderers",
+  "displayName": "Scrapbook Renderers",
+  "description": "Jupyter Notebook renderers for scrapbook scraps",
+  "version": "0.0.1",
+  "publisher": "tlinhart",
+  "author": {
+    "name": "Tomáš Linhart",
+    "email": "pasmen@gmail.com"
+  },
+  "license": "MIT",
+  "homepage": "https://github.com/tlinhart/vscode-scrapbook-renderers",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tlinhart/vscode-scrapbook-renderers.git"
+  },
+  "bugs": {
+    "url": "https://github.com/tlinhart/vscode-scrapbook-renderers/issues",
+    "email": "pasmen@gmail.com"
+  },
+  "icon": "images/icon.png",
+  "galleryBanner": {
+    "color": "#ffffff",
+    "theme": "light"
+  },
+  "categories": ["Other", "Data Science", "Notebooks", "Visualization"],
+  "keywords": ["jupyter", "notebook", "notebookRenderer"],
+  "engines": {
+    "vscode": "^1.95.0"
+  },
+  "contributes": {
+    "notebookRenderer": [
+      {
+        "id": "scrapbook-renderer",
+        "entrypoint": "./dist/index.js",
+        "displayName": "Scrapbook Renderer",
+        "mimeTypes": [
+          "application/scrapbook.scrap.json+json",
+          "application/scrapbook.scrap.text+json"
+        ]
+      }
+    ]
+  },
+  "scripts": {
+    "watch:typecheck": "tsc --watch",
+    "watch:build": "node esbuild.mjs --watch",
+    "typecheck": "tsc",
+    "biome:fix": "biome check --write",
+    "biome": "biome ci",
+    "build": "node esbuild.mjs --production",
+    "vscode:prepublish": "npm run typecheck && npm run biome:fix && npm run build",
+    "publish": "vsce publish"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "^1.9.4",
+    "@microlink/react-json-view": "^1.23.4",
+    "@types/node": "^22.10.1",
+    "@types/react": "^19.0.1",
+    "@types/react-dom": "^19.0.1",
+    "@types/vscode": "^1.95.0",
+    "@types/vscode-notebook-renderer": "^1.72.3",
+    "@vscode/vsce": "^3.2.1",
+    "esbuild": "^0.24.0",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "typescript": "^5.7.2",
+    "vscode-notebook-error-overlay": "^1.0.1"
+  }
+}
