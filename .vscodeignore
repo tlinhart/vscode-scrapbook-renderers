@@ -1,8 +1,11 @@
 node_modules/
 src/
+example/
+images/example.png
 .github/
 .vscode/
 .gitignore
+.nvmrc
 esbuild.mjs
 biome.json
 tsconfig.json
