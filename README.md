@@ -1,5 +1,10 @@
 # Scrapbook Renderers for Jupyter Notebooks
 
+[![CI workflow status][badge]][actions]
+
+[badge]: https://github.com/tlinhart/vscode-scrapbook-renderers/actions/workflows/ci.yml/badge.svg
+[actions]: https://github.com/tlinhart/vscode-scrapbook-renderers/actions
+
 A Visual Studio Code extension that provides renderers for [scrapbook](https://github.com/nteract/scrapbook)
 outputs (scraps) of Jupyter Notebooks.
 
