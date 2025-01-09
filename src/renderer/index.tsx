@@ -1,0 +1,110 @@
+import errorOverlay from "vscode-notebook-error-overlay";
+import type {
+  ActivationFunction,
+  OutputItem,
+  RendererContext,
+} from "vscode-notebook-renderer";
+import type { VSCodeEvent } from "vscode-notebook-renderer/events";
+
+import ReactJsonView from "@microlink/react-json-view";
+import React, { useState } from "react";
+import { createRoot } from "react-dom/client";
+
+type SimpleScrapProps = {
+  name: string;
+  data: null | boolean | number | string;
+};
+
+type ComplexScrapProps = {
+  name: string;
+  data: object;
+  onDidReceiveMessage: VSCodeEvent<any> | undefined;
+};
+
+const SimpleScrap = ({ name, data }: SimpleScrapProps) => (
+  <code>
+    "{name}" : {data}
+  </code>
+);
+
+let initialThemeKind: number;
+
+const ComplexScrap = ({
+  name,
+  data,
+  onDidReceiveMessage,
+}: ComplexScrapProps) => {
+  const [activeThemeKind, setActiveThemeKind] = useState(initialThemeKind);
+  if (onDidReceiveMessage) {
+    onDidReceiveMessage((message) => {
+      if (message.type === "activeThemeResponse") {
+        setActiveThemeKind(message.payload.kind);
+      }
+    });
+  }
+  return initialThemeKind ? (
+    <ReactJsonView
+      name={name}
+      src={data}
+      theme={
+        activeThemeKind === 2 || activeThemeKind === 3
+          ? "monokai"
+          : "rjv-default"
+      }
+      style={{ backgroundColor: "var(--vscode-editor-background)" }}
+      iconStyle="triangle"
+      displayDataTypes={false}
+      displayObjectSize={false}
+      shouldCollapse={(field) =>
+        field.namespace.length === 1 && field.namespace[0] === name
+      }
+    />
+  ) : (
+    <></>
+  );
+};
+
+export const activate: ActivationFunction = (
+  context: RendererContext<unknown>
+) => {
+  if (context.postMessage) {
+    context.postMessage({ type: "activeThemeRequest" });
+  }
+  if (context.onDidReceiveMessage) {
+    context.onDidReceiveMessage((message) => {
+      if (message.type === "activeThemeResponse") {
+        initialThemeKind = message.payload.kind;
+      }
+    });
+  }
+  return {
+    renderOutputItem(outputItem: OutputItem, element: HTMLElement) {
+      let shadow = element.shadowRoot;
+      if (!shadow) {
+        shadow = element.attachShadow({ mode: "open" });
+        const container = document.createElement("div");
+        container.id = "root";
+        shadow.append(container);
+      }
+      const container = shadow.getElementById("root");
+      if (!container) {
+        throw new Error("Could not find root element");
+      }
+      errorOverlay.wrap(container, () => {
+        const output = outputItem.json();
+        const root = createRoot(container);
+        if (typeof output.data === "object" && output.data !== null) {
+          root.render(
+            <ComplexScrap
+              name={output.name}
+              data={output.data}
+              onDidReceiveMessage={context.onDidReceiveMessage}
+            />
+          );
+        } else {
+          root.render(<SimpleScrap name={output.name} data={output.data} />);
+        }
+      });
+    },
+  };
+};

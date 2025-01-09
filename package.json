@@ -28,21 +28,24 @@
   "engines": {
     "vscode": "^1.95.0"
   },
+  "main": "./dist/extension.js",
+  "activationEvents": [],
   "contributes": {
     "notebookRenderer": [
       {
         "id": "scrapbook-renderer",
-        "entrypoint": "./dist/index.js",
+        "entrypoint": "./dist/renderer.js",
         "displayName": "Scrapbook Renderer",
         "mimeTypes": [
           "application/scrapbook.scrap.json+json",
           "application/scrapbook.scrap.text+json"
-        ]
+        ],
+        "requiresMessaging": "optional"
       }
     ]
   },
   "scripts": {
-    "watch:typecheck": "tsc --watch",
+    "watch:typecheck": "tsc --watch --project src/extension & tsc --watch --project src/renderer",
     "watch:build": "node esbuild.mjs --watch",
     "typecheck": "tsc",
     "biome:fix": "biome check --write",
@@ -56,7 +59,7 @@
     "@types/node": "22.10.5",
     "@types/react": "19.0.4",
     "@types/react-dom": "19.0.2",
-    "@types/vscode": "1.96.0",
+    "@types/vscode": "^1.95.0",
     "@types/vscode-notebook-renderer": "1.72.3",
     "@vscode/vsce": "3.2.1",
     "esbuild": "0.24.2",

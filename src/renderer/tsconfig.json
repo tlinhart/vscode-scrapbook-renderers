@@ -2,10 +2,9 @@
   "compilerOptions": {
     "module": "esnext",
     "moduleResolution": "bundler",
-    "rootDir": "src",
+    "rootDir": ".",
     "jsx": "react",
     "noEmit": true,
     "strict": true
-  },
-  "include": ["src/**/*"]
+  }
 }

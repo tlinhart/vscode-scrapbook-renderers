@@ -3,7 +3,7 @@ import * as esbuild from "esbuild";
 const production = process.argv.includes("--production");
 const watch = process.argv.includes("--watch");
 
-/** @type {import("esbuild").Plugin} */
+/** @type {esbuild.Plugin} */
 const esbuildProblemMatcherPlugin = {
   name: "esbuild-problem-matcher",
 
@@ -27,24 +27,38 @@ const esbuildProblemMatcherPlugin = {
 };
 
 async function main() {
-  const context = await esbuild.context({
-    entryPoints: ["src/index.tsx"],
+  /** @type {esbuild.BuildOptions} */
+  const commonOptions = {
     bundle: true,
-    format: "esm",
     minify: production,
     sourcemap: !production && "inline",
     sourcesContent: !production,
-    platform: "browser",
-    outdir: "dist",
     logLevel: "info",
     plugins: [esbuildProblemMatcherPlugin],
+  };
+
+  const extensionContext = await esbuild.context({
+    ...commonOptions,
+    entryPoints: ["src/extension/index.ts"],
+    format: "cjs",
+    platform: "node",
+    external: ["vscode"],
+    outfile: "dist/extension.js",
+  });
+
+  const rendererContext = await esbuild.context({
+    ...commonOptions,
+    entryPoints: ["src/renderer/index.tsx"],
+    format: "esm",
+    platform: "browser",
+    outfile: "dist/renderer.js",
   });
 
   if (watch) {
-    await context.watch();
+    await Promise.all([extensionContext.watch(), rendererContext.watch()]);
   } else {
-    await context.rebuild();
-    await context.dispose();
+    await Promise.all([extensionContext.rebuild(), rendererContext.rebuild()]);
+    await Promise.all([extensionContext.dispose(), rendererContext.dispose()]);
   }
 }
 
