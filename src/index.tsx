@@ -30,7 +30,7 @@ const ComplexScrap = ({ name, data }: ComplexScrapProps) => (
     name={name}
     src={data}
     theme="monokai"
-    style={{ background: "var(--vscode-editor-background" }}
+    style={{ background: "var(--vscode-editor-background)" }}
     iconStyle="triangle"
     displayDataTypes={false}
     displayObjectSize={false}
