@@ -53,9 +53,9 @@
   "devDependencies": {
     "@biomejs/biome": "1.9.4",
     "@microlink/react-json-view": "1.26.1",
-    "@types/node": "22.13.4",
-    "@types/react": "19.0.9",
-    "@types/react-dom": "19.0.3",
+    "@types/node": "22.13.5",
+    "@types/react": "19.0.10",
+    "@types/react-dom": "19.0.4",
     "@types/vscode": "1.97.0",
     "@types/vscode-notebook-renderer": "1.72.3",
     "@vscode/vsce": "3.2.2",
