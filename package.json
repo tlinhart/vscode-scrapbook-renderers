@@ -53,15 +53,15 @@
   "devDependencies": {
     "@biomejs/biome": "1.9.4",
     "@microlink/react-json-view": "1.26.1",
-    "@types/node": "22.13.11",
+    "@types/node": "22.13.14",
     "@types/react": "19.0.12",
     "@types/react-dom": "19.0.4",
     "@types/vscode": "1.98.0",
     "@types/vscode-notebook-renderer": "1.72.3",
-    "@vscode/vsce": "3.3.0",
-    "esbuild": "0.25.1",
-    "react": "19.0.0",
-    "react-dom": "19.0.0",
+    "@vscode/vsce": "3.3.1",
+    "esbuild": "0.25.2",
+    "react": "19.1.0",
+    "react-dom": "19.1.0",
     "typescript": "5.8.2",
     "vscode-notebook-error-overlay": "1.1.0"
   }
