@@ -52,17 +52,17 @@
   },
   "devDependencies": {
     "@biomejs/biome": "1.9.4",
-    "@microlink/react-json-view": "1.26.1",
-    "@types/node": "22.13.14",
-    "@types/react": "19.0.12",
-    "@types/react-dom": "19.0.4",
-    "@types/vscode": "1.98.0",
+    "@microlink/react-json-view": "1.26.2",
+    "@types/node": "22.16.3",
+    "@types/react": "19.1.8",
+    "@types/react-dom": "19.1.6",
+    "@types/vscode": "1.102.0",
     "@types/vscode-notebook-renderer": "1.72.3",
-    "@vscode/vsce": "3.3.1",
-    "esbuild": "0.25.2",
+    "@vscode/vsce": "3.6.0",
+    "esbuild": "0.25.6",
     "react": "19.1.0",
     "react-dom": "19.1.0",
-    "typescript": "5.8.2",
+    "typescript": "5.8.3",
     "vscode-notebook-error-overlay": "1.1.0"
   }
 }
