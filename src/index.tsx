@@ -1,13 +1,11 @@
+import ReactJsonView from "@microlink/react-json-view";
+import { createRoot } from "react-dom/client";
 import errorOverlay from "vscode-notebook-error-overlay";
 import type {
   ActivationFunction,
   OutputItem,
   RendererContext,
 } from "vscode-notebook-renderer";
-
-import ReactJsonView from "@microlink/react-json-view";
-import React from "react";
-import { createRoot } from "react-dom/client";
 
 type SimpleScrapProps = {
   name: string;
@@ -41,7 +39,7 @@ const ComplexScrap = ({ name, data }: ComplexScrapProps) => (
 );
 
 export const activate: ActivationFunction = (
-  context: RendererContext<unknown>
+  _context: RendererContext<unknown>
 ) => {
   return {
     renderOutputItem(outputItem: OutputItem, element: HTMLElement) {

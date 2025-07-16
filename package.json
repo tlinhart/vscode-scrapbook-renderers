@@ -23,8 +23,17 @@
     "color": "#ffffff",
     "theme": "light"
   },
-  "categories": ["Other", "Data Science", "Notebooks", "Visualization"],
-  "keywords": ["jupyter", "notebook", "notebookRenderer"],
+  "categories": [
+    "Other",
+    "Data Science",
+    "Notebooks",
+    "Visualization"
+  ],
+  "keywords": [
+    "jupyter",
+    "notebook",
+    "notebookRenderer"
+  ],
   "engines": {
     "vscode": "^1.95.0"
   },
