@@ -60,18 +60,18 @@
     "publish": "vsce publish"
   },
   "devDependencies": {
-    "@biomejs/biome": "2.1.2",
-    "@microlink/react-json-view": "1.26.2",
-    "@types/node": "22.16.5",
-    "@types/react": "19.1.8",
-    "@types/react-dom": "19.1.6",
+    "@biomejs/biome": "2.1.4",
+    "@microlink/react-json-view": "1.27.0",
+    "@types/node": "22.17.1",
+    "@types/react": "19.1.9",
+    "@types/react-dom": "19.1.7",
     "@types/vscode": "1.102.0",
     "@types/vscode-notebook-renderer": "1.72.3",
     "@vscode/vsce": "3.6.0",
     "esbuild": "0.25.8",
-    "react": "19.1.0",
-    "react-dom": "19.1.0",
-    "typescript": "5.8.3",
+    "react": "19.1.1",
+    "react-dom": "19.1.1",
+    "typescript": "5.9.2",
     "vscode-notebook-error-overlay": "1.1.0"
   }
 }
