@@ -60,17 +60,17 @@
     "publish": "vsce publish"
   },
   "devDependencies": {
-    "@biomejs/biome": "2.3.12",
+    "@biomejs/biome": "2.3.13",
     "@microlink/react-json-view": "1.27.1",
     "@types/node": "24.10.9",
-    "@types/react": "19.2.9",
+    "@types/react": "19.2.10",
     "@types/react-dom": "19.2.3",
     "@types/vscode": "1.108.1",
     "@types/vscode-notebook-renderer": "1.72.4",
     "@vscode/vsce": "3.7.1",
     "esbuild": "0.27.2",
-    "react": "19.2.3",
-    "react-dom": "19.2.3",
+    "react": "19.2.4",
+    "react-dom": "19.2.4",
     "typescript": "5.9.3",
     "vscode-notebook-error-overlay": "1.1.0"
   }
