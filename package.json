@@ -60,15 +60,15 @@
     "publish": "vsce publish"
   },
   "devDependencies": {
-    "@biomejs/biome": "2.5.6",
-    "@microlink/react-json-view": "1.31.25",
+    "@biomejs/biome": "2.5.7",
+    "@microlink/react-json-view": "1.31.28",
     "@types/node": "24.13.3",
     "@types/react": "19.2.18",
     "@types/react-dom": "19.2.4",
     "@types/vscode": "1.125.0",
     "@types/vscode-notebook-renderer": "1.72.4",
     "@vscode/vsce": "3.9.2",
-    "esbuild": "0.28.1",
+    "esbuild": "0.28.2",
     "react": "19.2.8",
     "react-dom": "19.2.8",
     "typescript": "5.9.3",
