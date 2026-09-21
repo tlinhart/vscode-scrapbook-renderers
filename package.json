@@ -60,12 +60,12 @@
     "publish": "vsce publish"
   },
   "devDependencies": {
-    "@biomejs/biome": "2.5.13",
-    "@microlink/react-json-view": "1.31.33",
-    "@types/node": "24.13.4",
+    "@biomejs/biome": "2.5.14",
+    "@microlink/react-json-view": "1.31.36",
+    "@types/node": "24.13.6",
     "@types/react": "19.3.0",
     "@types/react-dom": "19.3.0",
-    "@types/vscode": "1.137.0",
+    "@types/vscode": "1.138.0",
     "@types/vscode-notebook-renderer": "1.72.4",
     "@vscode/vsce": "3.9.2",
     "esbuild": "0.28.2",
