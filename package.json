@@ -69,8 +69,8 @@
     "@types/vscode-notebook-renderer": "1.72.4",
     "@vscode/vsce": "4.0.0",
     "esbuild": "0.28.2",
-    "react": "19.3.0",
-    "react-dom": "19.3.0",
+    "react": "19.3.1",
+    "react-dom": "19.3.1",
     "typescript": "5.9.3",
     "vscode-notebook-error-overlay": "1.1.0"
   }
