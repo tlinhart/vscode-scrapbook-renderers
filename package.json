@@ -60,8 +60,8 @@
     "publish": "vsce publish"
   },
   "devDependencies": {
-    "@biomejs/biome": "2.5.15",
-    "@microlink/react-json-view": "1.31.40",
+    "@biomejs/biome": "2.6.3",
+    "@microlink/react-json-view": "1.31.42",
     "@types/node": "24.19.2",
     "@types/react": "19.3.0",
     "@types/react-dom": "19.3.0",
